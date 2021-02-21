@@ -1,0 +1,57 @@
+name: Docker Container CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+
+  build-run-test:
+
+    runs-on: ubuntu-latest
+
+    ## First Approach ##
+    # LINK 1: https://www.petefreitag.com/item/903.cfm
+    # LINK 2: https://www.docker.com/blog/docker-github-actions/
+    container:
+        image: quay.io/fenicsproject/stable:latest
+    steps:  
+      - uses: actions/checkout@v2
+      - name: Preliminary test on FEniCS
+        run: python3 src/test_fenics/testFenics.py
+      - name: Poisson using classic FEM
+        run: python3 src/poisson/Poisson.py
+
+    ## Second Approach ##
+    # steps:
+    # - uses: actions/checkout@v2
+    # - name: Build the Docker image
+    #   run: docker build . --file .devcontainer/Dockerfile.ci --tag fenics
+
+    # # - uses: actions/checkout@v2
+    # - name: Run the Docker image
+    #   run: docker run -v ${pwd}:"/home/fenics/shared" -w /home/fenics/shared fenics
+
+    # # - uses: actions/checkout@v2
+    # - name: Test the FEniCS scripts
+    #   run: python3 src/poisson/Poisson.py
+
+    ## Third Approach ##
+    # steps:
+    #   -
+    #     name: Build Docker image
+    #     uses: docker/build-push-action@v2
+    #     with:
+    #       context: ./
+    #       file: ./Dockerfile
+    #       push: false
+    #       tags: user/app:latest
+  
+    #   - 
+    #     name: Run container and test 
+    #     uses: addnab/docker-run-action@v1
+    #     with:
+    #       image: user/app:latest
+    #       run: python3 src/poisson/Poisson.py

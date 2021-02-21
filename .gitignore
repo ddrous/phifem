@@ -1,0 +1,8 @@
+report/*
+!report/main.tex
+!report/main.pdf
+!report/bibliography.bib
+slides/*
+!slides/main.tex
+!slides/main.pdf
+!slides/bibliography.bib

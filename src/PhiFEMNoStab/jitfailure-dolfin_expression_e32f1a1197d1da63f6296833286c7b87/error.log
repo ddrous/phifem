@@ -1,0 +1,63 @@
+/tmp/tmp3tnryhzn/dolfin_expression_e32f1a1197d1da63f6296833286c7b87.cpp: In member function ‘virtual void dolfin::dolfin_expression_e32f1a1197d1da63f6296833286c7b87::eval(Eigen::Ref<Eigen::Matrix<double, -1, 1> >, Eigen::Ref<const Eigen::Matrix<double, -1, 1> >) const’:
+/tmp/tmp3tnryhzn/dolfin_expression_e32f1a1197d1da63f6296833286c7b87.cpp:61:58: error: no matching function for call to ‘sin(Eigen::Ref<const Eigen::Matrix<double, -1, 1> >&)’
+           values[0] = (1 - x[0]*x[0] - x[1]*x[1]) * sin(x) * exp(y) / 4;
+                                                          ^
+In file included from /usr/include/features.h:424:0,
+                 from /usr/include/x86_64-linux-gnu/c++/7/bits/os_defines.h:39,
+                 from /usr/include/x86_64-linux-gnu/c++/7/bits/c++config.h:533,
+                 from /usr/include/c++/7/bits/stl_algobase.h:59,
+                 from /usr/include/c++/7/vector:60,
+                 from /usr/local/include/dolfin/function/Expression.h:24,
+                 from /tmp/tmp3tnryhzn/dolfin_expression_e32f1a1197d1da63f6296833286c7b87.cpp:13:
+/usr/include/x86_64-linux-gnu/bits/mathcalls.h:64:1: note: candidate: double sin(double)
+ __MATHCALL_VEC (sin,, (_Mdouble_ __x));
+ ^
+/usr/include/x86_64-linux-gnu/bits/mathcalls.h:64:1: note:   no known conversion for argument 1 from ‘Eigen::Ref<const Eigen::Matrix<double, -1, 1> >’ to ‘double’
+In file included from /usr/local/lib/python3.6/dist-packages/ffc/backends/ufc/ufc_geometry.h:9:0,
+                 from /usr/local/lib/python3.6/dist-packages/ffc/backends/ufc/ufc.h:22,
+                 from /usr/local/include/dolfin/function/Expression.h:25,
+                 from /tmp/tmp3tnryhzn/dolfin_expression_e32f1a1197d1da63f6296833286c7b87.cpp:13:
+/usr/include/c++/7/cmath:425:3: note: candidate: constexpr float std::sin(float)
+   sin(float __x)
+   ^~~
+/usr/include/c++/7/cmath:425:3: note:   no known conversion for argument 1 from ‘Eigen::Ref<const Eigen::Matrix<double, -1, 1> >’ to ‘float’
+/usr/include/c++/7/cmath:429:3: note: candidate: constexpr long double std::sin(long double)
+   sin(long double __x)
+   ^~~
+/usr/include/c++/7/cmath:429:3: note:   no known conversion for argument 1 from ‘Eigen::Ref<const Eigen::Matrix<double, -1, 1> >’ to ‘long double’
+/usr/include/c++/7/cmath:437:5: note: candidate: template<class _Tp> constexpr typename __gnu_cxx::__enable_if<std::__is_integer<_Tp>::__value, double>::__type std::sin(_Tp)
+     sin(_Tp __x)
+     ^~~
+/usr/include/c++/7/cmath:437:5: note:   template argument deduction/substitution failed:
+/usr/include/c++/7/cmath: In substitution of ‘template<class _Tp> constexpr typename __gnu_cxx::__enable_if<std::__is_integer<_Tp>::__value, double>::__type std::sin(_Tp) [with _Tp = Eigen::Ref<const Eigen::Matrix<double, -1, 1> >]’:
+/tmp/tmp3tnryhzn/dolfin_expression_e32f1a1197d1da63f6296833286c7b87.cpp:61:58:   required from here
+/usr/include/c++/7/cmath:437:5: error: no type named ‘__type’ in ‘struct __gnu_cxx::__enable_if<false, double>’
+In file included from /usr/include/eigen3/Eigen/Core:80:0,
+                 from /usr/include/eigen3/Eigen/Dense:1,
+                 from /usr/local/include/dolfin/function/Expression.h:26,
+                 from /tmp/tmp3tnryhzn/dolfin_expression_e32f1a1197d1da63f6296833286c7b87.cpp:13:
+/usr/include/c++/7/complex:825:5: note: candidate: template<class _Tp> std::complex<_Tp> std::sin(const std::complex<_Tp>&)
+     sin(const complex<_Tp>& __z) { return __complex_sin(__z.__rep()); }
+     ^~~
+/usr/include/c++/7/complex:825:5: note:   template argument deduction/substitution failed:
+/tmp/tmp3tnryhzn/dolfin_expression_e32f1a1197d1da63f6296833286c7b87.cpp:61:58: note:   ‘Eigen::Ref<const Eigen::Matrix<double, -1, 1> >’ is not derived from ‘const std::complex<_Tp>’
+           values[0] = (1 - x[0]*x[0] - x[1]*x[1]) * sin(x) * exp(y) / 4;
+                                                          ^
+In file included from /usr/include/eigen3/Eigen/Core:513:0,
+                 from /usr/include/eigen3/Eigen/Dense:1,
+                 from /usr/local/include/dolfin/function/Expression.h:26,
+                 from /tmp/tmp3tnryhzn/dolfin_expression_e32f1a1197d1da63f6296833286c7b87.cpp:13:
+/usr/include/eigen3/Eigen/src/Core/GlobalFunctions.h:60:3: note: candidate: template<class Derived> const Eigen::CwiseUnaryOp<Eigen::internal::scalar_sin_op<typename Derived::Scalar>, const Derived> Eigen::sin(const Eigen::ArrayBase<Derived>&)
+   EIGEN_ARRAY_DECLARE_GLOBAL_UNARY(sin,scalar_sin_op,sine,\sa ArrayBase::sin)
+   ^
+/usr/include/eigen3/Eigen/src/Core/GlobalFunctions.h:60:3: note:   template argument deduction/substitution failed:
+/tmp/tmp3tnryhzn/dolfin_expression_e32f1a1197d1da63f6296833286c7b87.cpp:61:58: note:   ‘Eigen::Ref<const Eigen::Matrix<double, -1, 1> >’ is not derived from ‘const Eigen::ArrayBase<Derived>’
+           values[0] = (1 - x[0]*x[0] - x[1]*x[1]) * sin(x) * exp(y) / 4;
+                                                          ^
+/tmp/tmp3tnryhzn/dolfin_expression_e32f1a1197d1da63f6296833286c7b87.cpp:61:66: error: ‘y’ was not declared in this scope
+           values[0] = (1 - x[0]*x[0] - x[1]*x[1]) * sin(x) * exp(y) / 4;
+                                                                  ^
+/tmp/tmp3tnryhzn/dolfin_expression_e32f1a1197d1da63f6296833286c7b87.cpp:61:66: note: suggested alternative: ‘yn’
+           values[0] = (1 - x[0]*x[0] - x[1]*x[1]) * sin(x) * exp(y) / 4;
+                                                                  ^
+                                                                  yn

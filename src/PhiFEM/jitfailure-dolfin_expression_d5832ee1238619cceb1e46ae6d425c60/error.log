@@ -1,0 +1,7 @@
+/tmp/tmpw8n_kyja/dolfin_expression_d5832ee1238619cceb1e46ae6d425c60.cpp: In member function ‘virtual void dolfin::dolfin_expression_d5832ee1238619cceb1e46ae6d425c60::eval(Eigen::Ref<Eigen::Matrix<double, -1, 1> >, Eigen::Ref<const Eigen::Matrix<double, -1, 1> >) const’:
+/tmp/tmpw8n_kyja/dolfin_expression_d5832ee1238619cceb1e46ae6d425c60.cpp:61:33: error: ‘L’ was not declared in this scope
+           values[0] = fabs(x[0]/L + x[1]/H) + fabs(x[0]/L - x[1]/H) - 2.0;
+                                 ^
+/tmp/tmpw8n_kyja/dolfin_expression_d5832ee1238619cceb1e46ae6d425c60.cpp:61:42: error: ‘H’ was not declared in this scope
+           values[0] = fabs(x[0]/L + x[1]/H) + fabs(x[0]/L - x[1]/H) - 2.0;
+                                          ^

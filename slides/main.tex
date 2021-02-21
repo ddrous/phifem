@@ -1,0 +1,183 @@
+%-------------------------------------------------------------------------------
+%							PREAMBULE
+%-------------------------------------------------------------------------------
+
+\documentclass{beamer} 
+% \documentclass[notes,handout]{beamer}   % Use this to print notes and disable animations
+
+%%% Define colors and main theme-----
+\usecolortheme{seahorse}
+
+\usetheme[numbering=fraction,progressbar=head,block=fill,background=light,subsectionpage=progressbar]{metropolis} 
+
+\useoutertheme{infolines}
+\useoutertheme{smoothbars}
+
+\definecolor{MyGray}{RGB}{188, 195, 196}
+\setbeamercolor{date in head/foot}{fg=black,bg=MyGray}
+
+\useinnertheme{rectangles}
+%%-------------------------------------
+
+\usepackage[fontsize=7.0]{scrextend} % Use this to force the fontsize
+
+
+\usepackage{docmute} % To include multiple files
+
+% \usepackage{tikz}
+% \usetikzlibrary{positioning,shapes,arrows}
+% \usetikzlibrary{babel}      % Utiliser ce Babel pour eviter les problemes avec les animations TIKX
+
+\usepackage{etoolbox}
+\newcommand{\zerodisplayskips}{%        %% To remove space after math box
+  \setlength{\abovedisplayskip}{0pt}%
+  \setlength{\belowdisplayskip}{0pt}%
+  \setlength{\abovedisplayshortskip}{0pt}%
+  \setlength{\belowdisplayshortskip}{0pt}}
+% \appto{\normalsize}{\zerodisplayskips}
+% \appto{\small}{\zerodisplayskips}
+% \appto{\footnotesize}{\zerodisplayskips}
+
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\graphicspath{ {../report/Figures/} }
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,bm,mathtools}
+\usepackage[font=normalsize]{caption}
+\usepackage{subcaption}
+% \captionsetup{labelformat=empty,labelsep=none}    % Pour retirer le terme figure des titres
+
+\usepackage{marvosym} %% For smileys
+
+\usepackage{multirow}
+\newcommand{\tabhead}[1]{{\bfseries#1}}
+
+\usepackage{cases}
+\usepackage{siunitx}
+
+\usepackage{mathdots}
+% \usepackage{eulervm}    %% De beaux et droits symboles mathmatiques
+
+\newcommand{\bvec}[1]{\bm{#1}}    %% Vecteur en gras
+\newcommand{\myvec}[2]{\begin{pmatrix} #1  \\ #2 \end{pmatrix}}   %% vecteur 2d
+\newcommand{\mymat}[4]{\begin{pmatrix} #1 & #2 \\ #3 & #4 \end{pmatrix}}  %% Matrice 2*2
+
+\usepackage[backend=bibtex,style=authoryear,maxnames=2,natbib=true]{biblatex} % Use the bibtex backend with the authoryear citation style (which resembles APA)
+\addbibresource{bibliography.bib} % The filename of the bibliography
+\usepackage[autostyle=true]{csquotes} % Required to generate language-dependent quotes in the bibliography 
+\renewcommand*{\bibfont}{\normalsize} % Pour reduire la taille des references
+
+\usepackage{hyperref}
+\usepackage{booktabs}
+
+\usepackage{etoolbox}
+
+\newcommand{\phifem}{$\phi$-FEM\kern1ex}
+
+
+%-------------------------------------------------------------------------------
+%							NEW COMMANDS
+%-------------------------------------------------------------------------------
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\ensuremath{\mathbb{N}}}
+\renewcommand{\C}{\ensuremath{\mathbb{C}}}
+\newcommand{\Z}{\ensuremath{\mathbb{Z}}}
+\newcommand{\Q}{\ensuremath{\mathbb{Q}}}
+\newcommand{\dd}{\partial}
+\newcommand{\tmd}{{\hspace{0.17em}}d}
+\newcommand{\dx}{{\hspace{0.17em}}dx}
+\newcommand{\dt}{{\hspace{0.17em}}dt}
+\newcommand{\dO}{{\hspace{0.17em}}d{\Omega}}
+\newcommand{\dG}{{\hspace{0.17em}}d{\Gamma}}
+\newcommand{\Th}{\mathcal{T}_h}
+\DeclareMathOperator{\diam}{diam}
+
+
+%-------------------------------------------------------------------------------
+%							TITLE PAGE
+%-------------------------------------------------------------------------------
+\begin{document}
+
+
+\title[PhiFEM]{\huge Simulation of soft tissues using innovative non-conforming Finite Elements Methods }
+
+% \institute[University of Strasbourg]{\small \textbf{ \hspace*{0.1mm} Referent teacher} \hspace*{11mm} \textbf{Supervisors} \\ \footnotesize Christophe PRUD'HOMME \hspace*{4mm} Michel DUPREZ \\ \hspace*{38mm} Stephane COTIN}
+\institute[University of Strasbourg]{University of Strasbourg}
+
+% \institute[University of Strasbourg]{\normalsize \textbf{Enseignant} \\ Pr. Yannick PRIVAT}
+
+\author[Desmond Roussel NZOYEM]{\normalsize \textbf{Author :} Desmond Roussel NZOYEM \\ \\ \small \textbf{Supervisors :} Michel DUPREZ, Stéphane COTIN \\ \textbf{Referent teacher :} Christophe PRUD'HOMME \\}
+
+\date[\today]{M2 CSMI Project Course 2020/2021}
+
+\begingroup  % A new group whose information is not canon. Just for this slide!
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{headline}{\vspace{0.5cm}%
+  \hspace*{0.8cm}%
+  \includegraphics[width=2.8cm]{LogoUnistra}
+  \hfill\raisebox{.2cm}{\normalsize  }\hfill%
+  \includegraphics[width=2.5cm]{LogoMimesis2.png}
+  \hfill\raisebox{.2cm}{\normalsize  }\hfill%
+  \includegraphics[width=2.5cm]{LogoINRIA.png}
+  \hfill\raisebox{.2cm}{\normalsize  }\hfill%
+  \includegraphics[width=2.5cm]{LogoCSMI}
+  \hspace*{0.8cm}%
+}
+\begin{frame}[fragile]
+\maketitle
+\end{frame}
+\endgroup
+
+
+%-------------------------------------------------------------------------------
+%							INCLUDE THE CHAPTERS
+%-------------------------------------------------------------------------------
+
+\begin{frame}
+  \small
+  \frametitle{Contents}
+  \tableofcontents
+\end{frame}
+
+\input{Sections/Section1}
+
+\input{Sections/Section2}
+
+\input{Sections/Section3}
+
+\input{Sections/Section4}
+
+% \input{Sections/Section5}
+
+
+%% Form this point on, use the dark theme
+\metroset{background=dark}
+
+% %-------------------------------------------------------------------------------
+% %							THE BIBLIOGRAPHY
+% %-------------------------------------------------------------------------------
+\appendix   % Pour retirer les references de la bare de navigation
+% \vspace*{0.5mm}
+\printbibliography
+
+
+% %-------------------------------------------------------------------------------
+% %							THANK YOU NOTE
+% %-------------------------------------------------------------------------------
+
+% \begingroup
+% \section{Thx for your kind attention \Large \Smiley{} ! \\ Questions ?}
+% \begin{frame}[standout]
+\begin{frame}
+  \Large
+  \centering
+  Thank you for your kind attention \Large \Smiley{} ! \\
+  \centering
+  Questions ?
+\end{frame}
+
+% \endgroup
+
+
+\end{document}

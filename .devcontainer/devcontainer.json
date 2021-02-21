@@ -1,0 +1,44 @@
+{
+	// Optional project name (Dev Container name): Fenics, Scipy, and Matplotlib
+	"name": "FEniCS-SP-PLT",
+
+	// Use the image specified in Dockerfile.ci
+	"dockerFile": "Dockerfile.ci",
+
+	// Run the container using these flags
+	"runArgs": [
+		"-ti",							// Interactive mode with PTY
+		"-p",
+		"127.0.0.1:8000:8000",			// Publish Containers port 8000 on my port 8000
+		// "-v",
+		// "/$pwd:/home/fenics/shared",		// Mount the volume (NOT WORKING! See workspaceMount)
+		// "-w",
+		// "/home/fenics/shared",			// Work in the shared directory (NOT WORKING!See workspaceFolder)
+		"--cap-add=SYS_PTRACE",			// Add Linux capabilities
+		"--security-opt",
+		 "seccomp=unconfined"			// Allow must system calls to work
+	],
+	"workspaceMount": "source=${localWorkspaceFolder},target=/home/fenics/shared,type=bind",
+	"workspaceFolder": "/home/fenics/shared",
+
+	// Use 'settings' to set *default* container specific settings.json values on container create. 
+	// You can edit these settings after create using File > Preferences > Settings > Remote.
+	"settings": { 
+		"terminal.integrated.shell.linux": "/bin/bash"
+	},
+
+	// Use 'appPort' to create a container with published ports. If the port isn't working, be sure
+	// your server accepts connections from all interfaces (0.0.0.0 or '*'), not just localhost.
+	// "appPort": [],
+
+	// Uncomment the next line to run commands after the container is created.
+	// "postCreateCommand": "alias python3='sudo python3'",		// Run all python commands as root
+
+	// Comment out the next line if you want to run as root instead
+	"remoteUser": "fenics", 	// Attention: ne pas utiliser un autre utilisateur (i.e vscode)
+
+	// Add the IDs of extensions you want installed when the container is created in the array below.
+	"extensions": [
+		"ms-python.python"
+	]
+}

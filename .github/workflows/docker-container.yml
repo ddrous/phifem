@@ -1,0 +1,70 @@
+name: Docker Container CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+
+  build-run-test:
+
+    runs-on: ubuntu-latest
+
+    ## ------------ First approach ------------ ##
+    ## LINK 1: https://www.petefreitag.com/item/903.cfm
+    ## LINK 2: https://www.docker.com/blog/docker-github-actions/
+    container:
+        image: quay.io/fenicsproject/stable:latest
+    if: "!contains(github.event.head_commit.message, 'ci skip')"
+    steps:  
+      - uses: actions/checkout@v2
+      - name: Install Scipy and Matplotlib
+        run: pip3 install scipy && pip3 install matplotlib  
+      - name: Preliminary test on FEniCS
+        run: python3 src/TestFenics/TestPoisson.py
+      - name: Poisson using ClassicFEM
+        run: python3 src/ClassicFEM/Poisson.py
+      - name: Elasticity using classic FEM
+        run: python3 src/ClassicFEM/Elasticity2D.py
+      - name: Poisson using Phi-FEM with stabilization
+        run: python3 src/PhiFEM/Poisson.py
+      - name: Elasticity using Phi-FEM with stabilization
+        run: python3 src/PhiFEM/Elasticity2D.py
+
+    ## ------------ Second approach ------------ ##
+    ## LINK: https://docs.github.com/en/free-pro-team@latest/actions/reference/workflow-syntax-for-github-actions#jobsjob_idcontainer
+    # container:
+    #   image: fenics:fenics
+
+    # steps:
+    #   - uses: actions/checkout@v2
+
+    #   - name: Build the Docker image
+    #     run: docker build . --file .devcontainer/Dockerfile.ci --tag fenics --name fenics
+
+    #   - name: Run the Docker image
+    #     run: docker run -v ${pwd}:"/home/fenics/shared" -w /home/fenics/shared fenics
+
+    #   - name: Test the FEniCS scripts
+    #     run: python3 src/PhiFEM/Poisson.py
+
+
+    ## ------------ Third approach ------------ ##
+    # steps:
+    #   -
+    #     name: Build Docker image
+    #     uses: docker/build-push-action@v2
+    #     with:
+    #       context: ./
+    #       file: ./Dockerfile
+    #       push: false
+    #       tags: user/app:latest
+  
+    #   - 
+    #     name: Run container and test 
+    #     uses: addnab/docker-run-action@v1
+    #     with:
+    #       image: user/app:latest
+    #       run: python3 src/poisson/Poisson.py
