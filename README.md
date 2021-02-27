@@ -3,13 +3,13 @@
 <span style="font-size:1.3em;">**Simulation of soft tissues using an innovative non-conforming Finite Element Methods (Phi-FEM)**</span>
 
 
-## **Objectif**
+## **Objective**
 The goal is to apply the novel Phi-fem technique to the elasticity equation, thus understanding how soft tissues (which are elastic), move. Before doing that, we will implement the Poisson equation and compare the results with the ones obtained using the classic FEM method.
 
 
 
 ## **Deliverables**
-- The project report (in English): `docs/pdfs/report-v2.pdf`
+- The project report (in English): `docs/pdfs/report-v2_revised.pdf`
 - The codebase (in Python 3):
     - Poisson using classic FEM: `src/ClassiFEM/Poisson.py`
     - Linear elasticity using classic FEM: `src/ClassiFEM/Elasticity2D.py`
