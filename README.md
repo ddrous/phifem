@@ -1,27 +1,25 @@
-# PROJET M2 CSMI 2020 - MIMESIS
+# Phifem project
 
-<span style="font-size:1.3em;">**Simulation des tissus mous à l’aide de méthodes éléments finis non-conformes innovantes (Phi-FEM)**</span>
+<span style="font-size:1.3em;">**Simulation of soft tissues using an innovative non-conforming Finite Element Methods (Phi-FEM)**</span>
 
-<br>
 
 ## **Objectif**
-L'objectif du projet est d'appliquer la méthode Phi-FEM à l'équation d'élasticité linéaire. Nous commencerons par comparer les résultats Phi-Phem avec la méthode classique sur l'équation de Poisson. 
+The goal is to apply the novel Phi-fem technique to the elasticity equation, thus understanding how soft tissues (which are elastic), move. Before doing that, we will implement the Poisson equation and compare the results with the ones obtained using the classic FEM method.
 
-<br>
 
-## **Delivrables**
-- Le rapport: `docs/pdfs/report-v2.pdf`
-- Le code:
-    - Poisson avec la méthode FEM classique: `src/ClassiFEM/Poisson.py`
-    - Elasticité linéaire avec la méthode FEM classique: `src/ClassiFEM/Elasticity2D.py`
-    - Poisson avec la méthode Phi-FEM: `src/PhiFEM/Poisson.py`
-    - Elasticité linéaire avec la méthode Phi-FEM: `src/PhiFEM/Elasticity2D.py`
 
-**Remarque:** Modifier la variable `CvgStudy` dans chacun de ces scripts pour obtenir soit une simple simulation, soit une étude de convergence. 
+## **Deliverables**
+- The project report (in English): `docs/pdfs/report-v2.pdf`
+- The codebase (in Python 3):
+    - Poisson using classic FEM: `src/ClassiFEM/Poisson.py`
+    - Linear elasticity using classic FEM: `src/ClassiFEM/Elasticity2D.py`
+    - Poisson using Phi-FEM: `src/PhiFEM/Poisson.py`
+    - Linear elasticity using Phi-FEM: `src/PhiFEM/Elasticity2D.py`
 
-<br>
+**Remarque:** Alter the variable`CvgStudy` in each of those scripts to perform whether a simple simulation, of a complete convergence study. 
 
-## **Ressources**
-- [FEniCS](https://fenicsproject.org/): pour la formulation variationnelle
-- [Docker](https://www.docker.com/): pour l'installation de FEniCS
-- [Sympy](https://www.sympy.org/en/index.html): pour le calcul des dérivés utilisées dans la formulation variationnelle
+
+## **Resources**
+- [FEniCS](https://fenicsproject.org/): for solving the variational formulations
+- [Docker](https://www.docker.com/): for installing FEniCS
+- [Sympy](https://www.sympy.org/en/index.html): for computing the derivatives used in the variational formulations
