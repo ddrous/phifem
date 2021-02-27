@@ -4,7 +4,7 @@
 
 
 ## **Objective**
-The goal is to apply the novel Phi-fem technique to the elasticity equation, thus understanding how soft tissues (which are elastic), move. Before doing that, we will implement the Poisson equation and compare the results with the ones obtained using the classic FEM method.
+The goal is to apply the novel Phi-fem technique to the elasticity equation, thus understanding how soft tissues (which are elastic) deform under certain conditions (remote surgery, etc.). Before doing that, we will implement the Poisson equation and compare the results with the ones obtained using the classic FEM method.
 
 
 
