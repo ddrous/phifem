@@ -1,0 +1,17 @@
+% Chapter 6
+
+\chapter{Future works} % 6th chapter title
+
+\label{Chapter6} % For referencing the chapter elsewhere, use \ref{Chapter6} 
+
+This project has taught a lot about the Finite Element Method, and the many ways to make it better. Having tested the $\phi$-FEM technique on the Poisson and the elasticity equation, hence giving us a glimpse into its effectiveness on solid dynamics, it remains essential to complete the next steps in order to apply the technique to the real-time yet precise simulation of human organs. These steps could be :
+
+\begin{enumerate}
+    \item Test the technique on complex geometries
+    \item Benchmark the technique for speed efficiency
+    \item Deploy the numerical implementation into the \href{https://www.sofa-framework.org/}{SOFA} software
+\end{enumerate}
+
+\noindent We should note that these steps would likely not be implemented in FEniCS due to limitations it faces on such problems. Also, a priority should be on implementing the \phifem technique using the Neumann conditions\footnote{The reader is referred to \cite{Reference4} for the theoretical basis for this implementation.}. This is especially important for the elasticity equations, where the Neumann condition ultimately comes back to applying a certain force on the boundary of the domain. This results in a more realistic simulation of an organ's displacement. 
+
+%----------------------------------------------------------------------------------------

@@ -1,0 +1,78 @@
+% Chapter 1
+
+\chapter{Introduction} % Main chapter title
+
+\label{Chapter1} % For referencing the chapter elsewhere, use \ref{Chapter1} 
+
+%----------------------------------------------------------------------------------------
+
+% Define some commands to keep the formatting separated from the content 
+\newcommand{\keyword}[1]{\textbf{#1}}
+\newcommand{\tabhead}[1]{\textbf{#1}}
+\newcommand{\code}[1]{\texttt{#1}}
+\newcommand{\file}[1]{\texttt{\bfseries#1}}
+\newcommand{\option}[1]{\texttt{\itshape#1}}
+
+%----------------------------------------------------------------------------------------
+
+\section{Environment} % Section 1
+
+
+\indent Inria is the National Institute for Research in Digital Science and Technology. \textbf{Digital health} is one of their main research topics, and several teams are mobilized to face its challenges. The \textbf{\href{https://mimesis.inria.fr/}{MIMESIS}} team focuses on \textbf{real-time simulations for per-operative guidance}. The team develops \textbf {numerical techniques for real-time computation} and \textbf{data-driven simulation dedicated to patient-specific modeling}. Its global objective is to create a synergy between clinicians and scientists in order to create new technologies capable of redefining healthcare, with a strong emphasis on clinical translation (\cite{Reference1}).
+
+
+\section{Context} % Section 1
+
+The context of this project is the \textbf{development of a Finite Elements Method (FEM) adapted to computer-assisted surgery}. In recent years, numerical models using FEM to simulate the soft-tissue mechanisms of the human body have attracted a great interest from the scientific community. Models by FEM are among others, tools that contribute to the development of medical devices such as prosthesis and orthosis. They have the potential to improve strategies in planning and surgical assistance. In the context of computer-assisted surgery, it is essential that the FEM used is (\cite{Reference2}): 
+\begin{itemize}
+    \item \textbf{Quick}: given the context of real-time simulations ; 
+    \item \textbf{Precise}: in order to accurately guide the surgeon ;
+    \item \textbf{Patient-specific}: involving complex body organ geometries.
+\end{itemize}
+
+
+\section{Objectives}
+
+In the case of quasi-incompressibility for example, it is necessary to use hexahedral meshes\footnote{A hexahedral mesh can be defined as a geometric cell complex composed of 0-dimensional nodes, 1-dimensional edges, 2-dimensional quadrilaterals (residing in $\mathrm{R}^3$), and 3-dimensional hexahedra (cubes, parallelepipeds, etc.)} in order to avoid \textbf{locking} phenomena. However, there is no 3D mesh generator capable of meshing any geometry in an hexahedral manner. In order to completely avoid the creation of meshes, it is possible to perform numerical simulations on a \textbf{non-conforming} mesh\footnote{A non-conforming mesh is one which does not coincide with the boundary of the domain.}, and to manage the boundary conditions by \textbf{penalization}, or using \textbf{Lagrange multipliers}. Such methods already exists (e.g. XFEM, CutFEM, SBM)\footnote{References for these techniques can be respectively found at \parencite{XFEM}, \parencite{burman2015cutfem}, and \parencite{atallah2020analysis}.}, but their implementation generates other difficulties, among other things, the quadrature (computation of the integrals appearing in the FEM formulation).
+
+In a preliminary study (\cite{Reference3,Reference4})\footnote{Henceforth, these two papers will simply be referred to as "the papers".}, a new approach overcoming the afore-mentioned difficulty was developed. This method, called $\phi$-FEM, uses a \textbf{Level Set} function that cancels itself at the edges of the domain. The main objective of this project is to \textbf{develop a $\phi$-FEM technique for the dynamic of soft tissues, and potentially provide a mathematical proof of the method's convergence}. In order to achieve our main objective, we have divided the project into multiple milestones whose (intermediate) objectives are:
+\begin{enumerate}
+    \item Understand the $\phi$-FEM technique in question.
+    \item Reproduce the results from \parencite{Reference3} for the Poisson equation.
+    \item Develop a $\phi$-FEM technique for the linear elasticity equation.
+    \item Perform simulations on body organ geometries.
+\end{enumerate}
+
+\section{Tools Needed}
+
+A mastery of the following tools and technologies is required to accurately complete the wide range of tasks in this project:
+\begin{itemize}
+    \item \textbf{Python:} basic knowledge in Python is required in order to write scripts. 
+    \item \textbf{\href{https://fenicsproject.org/}{FEniCS}:} this python library offers a relatively easy interface to implement weak formulations for PDEs.
+    \item \textbf{Docker:} in order to set up the FEniCS environment.
+    \item \textbf{Sympy:} to perform symbolic derivatives, needed to test our programs.
+\end{itemize}
+
+\section{Mathematical fields involved}
+
+As for the mathematical aspect of the project, knowledge in several fields is needed. Those are:
+\begin{itemize}
+    \item \textbf{Partial differential equations (PDE):} elasticity equations, biomechanics, etc.;
+    \item \textbf{Scientific computing:} building and implementation of numerical schemes based on FEM;
+    \item \textbf{Numerical analysis:} studying the convergence of a mathematical model.
+\end{itemize}
+
+
+\section{Deliverables}
+
+
+At the end of the project, two deliverables were submitted as promised, all available on \href{https://github.com/master-csmi/2020-m2-mimesis}{this GitHub repository} :
+\begin{itemize}
+    \item \textbf{A typewritten report} that can be found under $\verb|docs/pdfs/reportv2.pdf|$.
+    \item \textbf{A Python code base} corresponding to every problem we have solved. In each script, the variable  $\verb|cvgStudy|$ (in the main section) has to be changed to $\verb|False|$ or $\verb|True|$ to indicate whether we want to run a single simulation, or perform a convergence study. The main files are: \begin{itemize}
+        \item \textbf{Poisson} Problem using the \textbf{classic FEM} formulation : $\verb|src/ClassicFEM/Poisson.py|$.
+        \item \textbf{Poisson} Problem using the \textbf{$\phi$-FEM} formulation : $\verb|src/PhiFEM/Poisson.py|$.
+        \item \textbf{Elasticity} equation using the \textbf{classic FEM} formulation : $\verb|src/ClassicFEM/Elasticity2D.py|$.
+        \item \textbf{Elasticity} equation using the \textbf{$\phi$-FEM} formulation : $\verb|src/PhiFEM/Elasticity2D.py|$.
+    \end{itemize}
+\end{itemize} 

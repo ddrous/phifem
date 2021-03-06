@@ -1,0 +1,224 @@
+\relax 
+\providecommand\hyper@newdestlabel[2]{}
+\@writefile{toc}{\contentsline {chapter}{\numberline {2}Results}{4}{chapter.20}\protected@file@percent }
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\newlabel{Chapter3}{{2}{4}{Results}{chapter.20}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.1}Presentation of the $\phi $-FEM technique}{4}{section.21}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1.1}The Classic FEM approach}{4}{subsection.22}\protected@file@percent }
+\newlabel{eq:problem}{{2.1}{4}{The Classic FEM approach}{equation.23}{}}
+\newlabel{eq:varForm}{{2.2}{4}{The Classic FEM approach}{equation.25}{}}
+\newlabel{eq:poisson}{{2.3}{4}{The Classic FEM approach}{equation.26}{}}
+\newlabel{eq:varFormPoisson}{{2.4}{4}{The Classic FEM approach}{equation.27}{}}
+\newlabel{eq:varFormFEM}{{2.5}{5}{The Classic FEM approach}{equation.29}{}}
+\newlabel{eq:PoissonClassic}{{2.6}{5}{The Classic FEM approach}{equation.30}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1.2}XFEM, CutFEM, and SBM}{5}{subsection.31}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2.1}{\ignorespaces Illustration of the extended finite element method (XFEM) approach. The mesh is locally enriched as the crack propagates, in order to avoid remeshing \parencite {de2018delamination}.\relax }}{5}{figure.caption.33}\protected@file@percent }
+\newlabel{fig:XFEM}{{2.1}{5}{Illustration of the extended finite element method (XFEM) approach. The mesh is locally enriched as the crack propagates, in order to avoid remeshing \parencite {de2018delamination}.\relax }{figure.caption.33}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.2}{\ignorespaces Illustration of the CutFEM approach. A mesh with the interface indicated is being divided into two new meshes. $\Omega _1$ is the exterior (in the middle) and $\Omega _2$ is the interior (on the right). The doubled elements (in both sub-meshes) are shaded \parencite {burman2015cutfem}.\relax }}{6}{figure.caption.34}\protected@file@percent }
+\newlabel{fig:CutFEM}{{2.2}{6}{Illustration of the CutFEM approach. A mesh with the interface indicated is being divided into two new meshes. $\Omega _1$ is the exterior (in the middle) and $\Omega _2$ is the interior (on the right). The doubled elements (in both sub-meshes) are shaded \parencite {burman2015cutfem}.\relax }{figure.caption.34}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.3}{\ignorespaces Illustration of the SBM (Shifted Boundary Method). The original boundary is in blue, while the shifted boundary is in red \parencite {atallah2020analysis}.\relax }}{6}{figure.caption.35}\protected@file@percent }
+\newlabel{fig:SBM}{{2.3}{6}{Illustration of the SBM (Shifted Boundary Method). The original boundary is in blue, while the shifted boundary is in red \parencite {atallah2020analysis}.\relax }{figure.caption.35}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1.3}Formal presentation of the $\phi $-FEM technique}{7}{subsection.36}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2.4}{\ignorespaces Conversion of a problem from Classic FEM to $\phi $-FEM\kern 1exin order to avoid complications due to meshing. $\Omega $ and $\partial \Omega $ are defined by the smooth level-set function $\phi $. $\partial \Omega ^* = \Gamma ^*$ is a fictitious boundary defined by all the cells cut by $\phi $. It is on this boundary that integrations will be performed \parencite {Reference2}.\relax }}{7}{figure.caption.38}\protected@file@percent }
+\newlabel{fig:ClassicToPhiFEM}{{2.4}{7}{Conversion of a problem from Classic FEM to \phifem in order to avoid complications due to meshing. $\Omega $ and $\partial \Omega $ are defined by the smooth level-set function $\phi $. $\partial \Omega ^* = \Gamma ^*$ is a fictitious boundary defined by all the cells cut by $\phi $. It is on this boundary that integrations will be performed \parencite {Reference2}.\relax }{figure.caption.38}{}}
+\newlabel{eq:discret prob}{{2.7}{8}{Formal presentation of the $\phi $-FEM technique}{equation.39}{}}
+\newlabel{ahPhiFEM}{{2.8}{8}{Formal presentation of the $\phi $-FEM technique}{equation.40}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.2}The Poisson problem}{9}{section.41}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.1}Using classic FEM}{9}{subsection.42}\protected@file@percent }
+\newlabel{eq:test2}{{2.9}{9}{Using classic FEM}{equation.44}{}}
+\newlabel{fig:ClassicSol2}{{2.5a}{9}{Solution\relax }{figure.caption.45}{}}
+\newlabel{sub@fig:ClassicSol2}{{a}{9}{Solution\relax }{figure.caption.45}{}}
+\newlabel{fig:ClassicCvgStudy2}{{2.5b}{9}{Convergence study\relax }{figure.caption.45}{}}
+\newlabel{sub@fig:ClassicCvgStudy2}{{b}{9}{Convergence study\relax }{figure.caption.45}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.5}{\ignorespaces Results obtained when applying the classic FEM technique to the Poisson equation \textup  {\hbox {\mathsurround \z@ \normalfont  (\ignorespaces \ref  {eq:test1redef}\unskip \@@italiccorr )}}. The $H^1$ norm presented in (B) is the norm $\Vert u - u_h\Vert _{1, \Omega }$. These results confirm what we expect since and will serve as a reference for the following results. The red and blue plots in (B) indicate the relative error.\relax }}{9}{figure.caption.45}\protected@file@percent }
+\newlabel{fig:ClassicPoisson2}{{2.5}{9}{Results obtained when applying the classic FEM technique to the Poisson equation \eqref {eq:test1redef}. The $H^1$ norm presented in (B) is the norm $\Vert u - u_h\Vert _{1, \Omega }$. These results confirm what we expect since and will serve as a reference for the following results. The red and blue plots in (B) indicate the relative error.\relax }{figure.caption.45}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.2}Using $\phi $-FEM}{10}{subsection.50}\protected@file@percent }
+\newlabel{eq:test1redef}{{2.12}{10}{Using $\phi $-FEM}{equation.51}{}}
+\newlabel{fig:StabSol}{{2.6a}{10}{Solution\relax }{figure.caption.52}{}}
+\newlabel{sub@fig:StabSol}{{a}{10}{Solution\relax }{figure.caption.52}{}}
+\newlabel{fig:StabCvgStudy}{{2.6b}{10}{Convergence study\relax }{figure.caption.52}{}}
+\newlabel{sub@fig:StabCvgStudy}{{b}{10}{Convergence study\relax }{figure.caption.52}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.6}{\ignorespaces Results obtained when applying the $\phi $-FEM technique with stabilization to the Poisson equation. The $H^1$ norm presented in (B) is the norm $\Vert u - u_h\Vert _{1, \Omega \cap \Omega _h}$, for better comparison with the classic FEM case. These results confirm what we expected, with better slopes compared to fig. \ref  {fig:ClassicPoisson2}.\relax }}{10}{figure.caption.52}\protected@file@percent }
+\newlabel{fig:StabPoisson}{{2.6}{10}{Results obtained when applying the $\phi $-FEM technique with stabilization to the Poisson equation. The $H^1$ norm presented in (B) is the norm $\Vert u - u_h\Vert _{1, \Omega \cap \Omega _h}$, for better comparison with the classic FEM case. These results confirm what we expected, with better slopes compared to fig. \ref {fig:ClassicPoisson2}.\relax }{figure.caption.52}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.3}The elasticity equation}{11}{section.56}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3.1}Using Classic FEM}{11}{subsection.57}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2.7}{\ignorespaces Illustration of a linear elasticity problem (with small deformations). The domain $ \Omega $ is a disk. The vertical force $f$ can be associated to the gravity. The displacement vector $g$ on the boundary is fixed.\relax }}{11}{figure.caption.58}\protected@file@percent }
+\newlabel{fig:beam}{{2.7}{11}{Illustration of a linear elasticity problem (with small deformations). The domain $ \Omega $ is a disk. The vertical force $f$ can be associated to the gravity. The displacement vector $g$ on the boundary is fixed.\relax }{figure.caption.58}{}}
+\newlabel{eq:elasticity}{{2.15}{11}{Using Classic FEM}{equation.59}{}}
+\newlabel{eq:test3}{{2.19}{12}{Using Classic FEM}{equation.68}{}}
+\newlabel{fig:Para1}{{2.8a}{13}{Solution's magnitude in Paraview\relax }{figure.caption.69}{}}
+\newlabel{sub@fig:Para1}{{a}{13}{Solution's magnitude in Paraview\relax }{figure.caption.69}{}}
+\newlabel{fig:Para2}{{2.8b}{13}{Solution warped by vector in Paraview\relax }{figure.caption.69}{}}
+\newlabel{sub@fig:Para2}{{b}{13}{Solution warped by vector in Paraview\relax }{figure.caption.69}{}}
+\newlabel{fig:ClassicElasSol}{{2.8c}{13}{Solution's components (vector) in Matplotlib\relax }{figure.caption.69}{}}
+\newlabel{sub@fig:ClassicElasSol}{{c}{13}{Solution's components (vector) in Matplotlib\relax }{figure.caption.69}{}}
+\newlabel{fig:ClassicElasCvg}{{2.8d}{13}{Convergence study\relax }{figure.caption.69}{}}
+\newlabel{sub@fig:ClassicElasCvg}{{d}{13}{Convergence study\relax }{figure.caption.69}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.8}{\ignorespaces Results obtained when applying the classic FEM technique to the elasticity equation \textup  {\hbox {\mathsurround \z@ \normalfont  (\ignorespaces \ref  {eq:elasticity}\unskip \@@italiccorr )}}. The warp by vector (B) shows that the elastic material is expanding to its right, but contracting to its left. The convergence study (D) in done with relative errors. The $H^1$ slope indicated in (D) is the $H^1$ semi-norm $\vert u - u_h\vert _{1, \Omega }$.\relax }}{13}{figure.caption.69}\protected@file@percent }
+\newlabel{fig:ClassicElas}{{2.8}{13}{Results obtained when applying the classic FEM technique to the elasticity equation \eqref {eq:elasticity}. The warp by vector (B) shows that the elastic material is expanding to its right, but contracting to its left. The convergence study (D) in done with relative errors. The $H^1$ slope indicated in (D) is the $H^1$ semi-norm $\vert u - u_h\vert _{1, \Omega }$.\relax }{figure.caption.69}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3.2}Using $\phi $-FEM\kern 1ex}{13}{subsection.70}\protected@file@percent }
+\newlabel{eq:1}{{2.20}{13}{Using \phifem }{equation.73}{}}
+\newlabel{eq:2}{{2.21}{14}{Using \phifem }{equation.77}{}}
+\newlabel{eq:3}{{2.22}{14}{Using \phifem }{equation.80}{}}
+\newlabel{eq:test4}{{2.26}{15}{Using \phifem }{equation.86}{}}
+\newlabel{fig:Para3}{{2.9a}{16}{Solution's magnitude in Paraview\relax }{figure.caption.87}{}}
+\newlabel{sub@fig:Para3}{{a}{16}{Solution's magnitude in Paraview\relax }{figure.caption.87}{}}
+\newlabel{fig:Para3}{{2.9b}{16}{Solution warped by vector in Paraview\relax }{figure.caption.87}{}}
+\newlabel{sub@fig:Para3}{{b}{16}{Solution warped by vector in Paraview\relax }{figure.caption.87}{}}
+\newlabel{fig:StabElasSol}{{2.9c}{16}{Solution's components (vector) in Matplotlib\relax }{figure.caption.87}{}}
+\newlabel{sub@fig:StabElasSol}{{c}{16}{Solution's components (vector) in Matplotlib\relax }{figure.caption.87}{}}
+\newlabel{fig:StabElasCvg}{{2.9d}{16}{Convergence study\relax }{figure.caption.87}{}}
+\newlabel{sub@fig:StabElasCvg}{{d}{16}{Convergence study\relax }{figure.caption.87}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.9}{\ignorespaces Results obtained when applying the $\phi $-FEM\kern 1extechnique to the elasticity equation \textup  {\hbox {\mathsurround \z@ \normalfont  (\ignorespaces \ref  {eq:elasticity}\unskip \@@italiccorr )}}. The convergence study in done with relative errors. The $H^1$ slope indicated in (D) is the $H^1$ semi-norm $ | u - u_h|_{1, \Omega \cap \Omega _h}$.\relax }}{16}{figure.caption.87}\protected@file@percent }
+\newlabel{fig:StabElas}{{2.9}{16}{Results obtained when applying the \phifem technique to the elasticity equation \eqref {eq:elasticity}. The convergence study in done with relative errors. The $H^1$ slope indicated in (D) is the $H^1$ semi-norm $ | u - u_h|_{1, \Omega \cap \Omega _h}$.\relax }{figure.caption.87}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.4}Results summary}{16}{section.88}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {2.1}{\ignorespaces Data summarizing the convergence results.\relax }}{16}{table.caption.89}\protected@file@percent }
+\newlabel{tab:results1}{{2.1}{16}{Data summarizing the convergence results.\relax }{table.caption.89}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.10}{\ignorespaces Comparison of the convergence results we obtained from the previous sections.\relax }}{17}{figure.caption.90}\protected@file@percent }
+\newlabel{fig:results2}{{2.10}{17}{Comparison of the convergence results we obtained from the previous sections.\relax }{figure.caption.90}{}}
+\@setckpt{Chapters/Chapter3}{
+\setcounter{page}{18}
+\setcounter{equation}{26}
+\setcounter{enumi}{4}
+\setcounter{enumii}{0}
+\setcounter{enumiii}{0}
+\setcounter{enumiv}{0}
+\setcounter{footnote}{20}
+\setcounter{mpfootnote}{0}
+\setcounter{part}{0}
+\setcounter{chapter}{2}
+\setcounter{section}{4}
+\setcounter{subsection}{0}
+\setcounter{subsubsection}{0}
+\setcounter{paragraph}{0}
+\setcounter{subparagraph}{0}
+\setcounter{figure}{10}
+\setcounter{table}{1}
+\setcounter{LT@tables}{0}
+\setcounter{LT@chunks}{0}
+\setcounter{caption@flags}{0}
+\setcounter{continuedfloat}{0}
+\setcounter{subfigure}{4}
+\setcounter{subtable}{0}
+\setcounter{float@type}{4}
+\setcounter{parentequation}{0}
+\setcounter{tabx@nest}{0}
+\setcounter{listtotal}{0}
+\setcounter{listcount}{0}
+\setcounter{liststart}{0}
+\setcounter{liststop}{0}
+\setcounter{citecount}{0}
+\setcounter{citetotal}{0}
+\setcounter{multicitecount}{0}
+\setcounter{multicitetotal}{0}
+\setcounter{instcount}{30}
+\setcounter{maxnames}{2}
+\setcounter{minnames}{1}
+\setcounter{maxitems}{3}
+\setcounter{minitems}{1}
+\setcounter{citecounter}{0}
+\setcounter{maxcitecounter}{0}
+\setcounter{savedcitecounter}{0}
+\setcounter{uniquelist}{0}
+\setcounter{uniquename}{0}
+\setcounter{refsection}{0}
+\setcounter{refsegment}{0}
+\setcounter{maxextratitle}{0}
+\setcounter{maxextratitleyear}{0}
+\setcounter{maxextraname}{0}
+\setcounter{maxextradate}{0}
+\setcounter{maxextraalpha}{0}
+\setcounter{abbrvpenalty}{50}
+\setcounter{highnamepenalty}{50}
+\setcounter{lownamepenalty}{25}
+\setcounter{maxparens}{3}
+\setcounter{parenlevel}{0}
+\setcounter{mincomprange}{10}
+\setcounter{maxcomprange}{100000}
+\setcounter{mincompwidth}{1}
+\setcounter{afterword}{0}
+\setcounter{savedafterword}{0}
+\setcounter{annotator}{0}
+\setcounter{savedannotator}{0}
+\setcounter{author}{0}
+\setcounter{savedauthor}{0}
+\setcounter{bookauthor}{0}
+\setcounter{savedbookauthor}{0}
+\setcounter{commentator}{0}
+\setcounter{savedcommentator}{0}
+\setcounter{editor}{0}
+\setcounter{savededitor}{0}
+\setcounter{editora}{0}
+\setcounter{savededitora}{0}
+\setcounter{editorb}{0}
+\setcounter{savededitorb}{0}
+\setcounter{editorc}{0}
+\setcounter{savededitorc}{0}
+\setcounter{foreword}{0}
+\setcounter{savedforeword}{0}
+\setcounter{holder}{0}
+\setcounter{savedholder}{0}
+\setcounter{introduction}{0}
+\setcounter{savedintroduction}{0}
+\setcounter{namea}{0}
+\setcounter{savednamea}{0}
+\setcounter{nameb}{0}
+\setcounter{savednameb}{0}
+\setcounter{namec}{0}
+\setcounter{savednamec}{0}
+\setcounter{translator}{0}
+\setcounter{savedtranslator}{0}
+\setcounter{shortauthor}{0}
+\setcounter{savedshortauthor}{0}
+\setcounter{shorteditor}{0}
+\setcounter{savedshorteditor}{0}
+\setcounter{labelname}{0}
+\setcounter{savedlabelname}{0}
+\setcounter{institution}{0}
+\setcounter{savedinstitution}{0}
+\setcounter{lista}{0}
+\setcounter{savedlista}{0}
+\setcounter{listb}{0}
+\setcounter{savedlistb}{0}
+\setcounter{listc}{0}
+\setcounter{savedlistc}{0}
+\setcounter{listd}{0}
+\setcounter{savedlistd}{0}
+\setcounter{liste}{0}
+\setcounter{savedliste}{0}
+\setcounter{listf}{0}
+\setcounter{savedlistf}{0}
+\setcounter{location}{0}
+\setcounter{savedlocation}{0}
+\setcounter{organization}{0}
+\setcounter{savedorganization}{0}
+\setcounter{origlocation}{0}
+\setcounter{savedoriglocation}{0}
+\setcounter{origpublisher}{0}
+\setcounter{savedorigpublisher}{0}
+\setcounter{publisher}{0}
+\setcounter{savedpublisher}{0}
+\setcounter{language}{0}
+\setcounter{savedlanguage}{0}
+\setcounter{origlanguage}{0}
+\setcounter{savedoriglanguage}{0}
+\setcounter{pageref}{0}
+\setcounter{savedpageref}{0}
+\setcounter{textcitecount}{0}
+\setcounter{textcitetotal}{0}
+\setcounter{textcitemaxnames}{0}
+\setcounter{biburlbigbreakpenalty}{100}
+\setcounter{biburlbreakpenalty}{200}
+\setcounter{biburlnumpenalty}{0}
+\setcounter{biburlucpenalty}{0}
+\setcounter{biburllcpenalty}{0}
+\setcounter{smartand}{1}
+\setcounter{bbx:relatedcount}{0}
+\setcounter{bbx:relatedtotal}{0}
+\setcounter{Item}{4}
+\setcounter{Hfootnote}{24}
+\setcounter{Hy@AnnotLevel}{0}
+\setcounter{bookmark@seq@number}{20}
+\setcounter{section@level}{1}
+}
