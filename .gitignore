@@ -1,8 +1,12 @@
 report/*
+!report/Figures/
+!report/Chapters/
+!report/Appendices/
 !report/main.tex
 !report/main.pdf
 !report/bibliography.bib
 slides/*
+!slides/Sections/
 !slides/main.tex
 !slides/main.pdf
 !slides/bibliography.bib
