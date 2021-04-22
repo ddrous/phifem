@@ -1,6 +1,6 @@
 # Phifem project
 
-<span style="font-size:1.3em;">**Simulation of soft tissues using an innovative non-conforming Finite Element Methods (Phi-FEM)**</span>
+<span style="font-size:1.3em;">**Simulation of soft tissues using an innovative non-conforming Finite Element Method (Phi-FEM)**</span>
 
 
 ## **Objective**
